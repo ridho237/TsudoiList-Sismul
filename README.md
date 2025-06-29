@@ -1,13 +1,13 @@
 # TsudoiList Backend
 
 ## Deskripsi
-TsudoiList Backend adalah REST API yang digunakan untuk mengelola daftar anime dan drama. API ini memungkinkan pengguna untuk mencari, menambahkan, memperbarui, dan menghapus data anime dan drama, serta mengelola akun pengguna.
+TsudoiList Backend adalah REST API yang digunakan untuk mengelola daftar anime. API ini memungkinkan pengguna untuk mencari, menambahkan, memperbarui, dan menghapus data anime, serta mengelola akun pengguna.
 
 ## URL Base
 `http://localhost:8000`
 
 ## Fitur Utama
-- **Manajemen Anime & Drama**: Fetch data, tambah, perbarui status & episode, serta hapus.
+- **Manajemen Anime**: Fetch data, tambah, perbarui status & episode, serta hapus.
 - **Autentikasi Pengguna**: Signup, login, logout, dan pengelolaan profil.
 - **Keamanan**: Menggunakan `authMiddleware` untuk melindungi endpoint tertentu.
 
