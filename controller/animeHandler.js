@@ -17,7 +17,7 @@ const fetchAnime = async (req, res) => {
 
 		res.json(anime);
 	} catch (error) {
-		res.status(500).json({ error: 'Gagal Mendapatkan data Anime' });
+		res.status(500).json({ error: 'Gagal Mendapatkan data Anime' }, error.message);
 	}
 };
 
@@ -41,21 +41,18 @@ const fetchAnimeById = async (req, res) => {
 			image: anime.img_url,
 		});
 	} catch (error) {
-		res.status(500).json({ error: 'Gagal saat menerima data anime' });
+		res.status(500).json({ error: 'Gagal saat menerima data anime' }, error.message);
 	}
 };
 
 const addAnimeToList = async (req, res) => {
 	try {
-		const { anime_id, name, score, genres, episode, year, image, status, progEps } =
-			req.body;
+		const { anime_id, name, score, genres, episode, year, image, status, progEps } = req.body;
 		const userId = req.user.id;
 		const existingAnime = await AnimeList.findOne({ name, status, userId });
 
 		if (existingAnime) {
-			return res
-				.status(400)
-				.json({ message: 'Anime tersebut sudah ada di list kamu' });
+			return res.status(400).json({ message: 'Anime tersebut sudah ada di list kamu' });
 		}
 
 		const lastAnime = await AnimeList.findOne({ status, userId })
@@ -81,7 +78,7 @@ const addAnimeToList = async (req, res) => {
 		await newAnime.save();
 		res.status(201).json({ message: 'Anime berhasil ditambah', anime: newAnime });
 	} catch (error) {
-		res.status(500).json({ error: 'Gagal menambah Animemu' });
+		res.status(500).json({ error: 'Gagal menambah Animemu' }, error.message);
 	}
 };
 
@@ -106,7 +103,7 @@ const updateAnimeStatus = async (req, res) => {
 
 		res.status(200).json({ message: 'Status Anime berhasil diupdate', anime });
 	} catch (error) {
-		res.status(500).json({ error: 'Gagal saat update status Anime' });
+		res.status(500).json({ error: 'Gagal saat update status Anime' }, error.message);
 	}
 };
 
@@ -131,7 +128,7 @@ const updateAnimeEps = async (req, res) => {
 
 		res.status(200).json({ message: 'Episode Anime berhasil diupdate', anime });
 	} catch (error) {
-		res.status(500).json({ error: 'Gagal mengupdate episode Anime' });
+		res.status(500).json({ error: 'Gagal mengupdate episode Anime' }, error.message);
 	}
 };
 
@@ -141,7 +138,7 @@ const getAllAnime = async (req, res) => {
 		const anime = await AnimeList.find({ userId });
 		res.json(anime);
 	} catch (error) {
-		res.status(500).json({ error: 'Gagal mendapatkan data Anime' });
+		res.status(500).json({ error: 'Gagal mendapatkan data Anime' }, error.message);
 	}
 };
 
@@ -155,7 +152,7 @@ const getAnimeById = async (req, res) => {
 		}
 		res.json(anime);
 	} catch (error) {
-		res.status(500).json({ error: 'Gagal mendapatkan data Anime' });
+		res.status(500).json({ error: 'Gagal mendapatkan data Anime' }, error.message);
 	}
 };
 
@@ -179,7 +176,7 @@ const deleteAnime = async (req, res) => {
 
 		res.json({ message: 'Anime berhasil dihapus dari list' });
 	} catch (error) {
-		res.status(500).json({ error: 'Gagal menghapus Anime' });
+		res.status(500).json({ error: 'Gagal menghapus Anime' }, error.message);
 	}
 };
 

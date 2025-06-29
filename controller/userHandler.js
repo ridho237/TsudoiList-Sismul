@@ -10,7 +10,7 @@ require('dotenv').config();
 const COOKIE_OPTIONS = {
 	httpOnly: true,
 	secure: process.env.NODE_ENV === 'production',
-	sameSite: 'none',
+	sameSite: 'lax',
 };
 
 const signUp = async (req, res) => {
@@ -27,9 +27,7 @@ const signUp = async (req, res) => {
 			const password = fields.password?.[0];
 
 			if (!username || !email || !password) {
-				return res
-					.status(400)
-					.json({ message: 'Username, email, and password are required' });
+				return res.status(400).json({ message: 'Username, email, and password are required' });
 			}
 
 			let profileImageUrl = '';
@@ -87,13 +85,9 @@ const login = async (req, res) => {
 			return res.status(400).json({ message: 'Invalid password' });
 		}
 
-		const token = jwt.sign(
-			{ id: user._id, username: user.username },
-			process.env.SECRET_KEY,
-			{
-				expiresIn: '1d',
-			}
-		);
+		const token = jwt.sign({ id: user._id, username: user.username }, process.env.SECRET_KEY, {
+			expiresIn: '1d',
+		});
 
 		// Simpan token dalam HttpOnly cookie
 		res.cookie('auth_token', token, COOKIE_OPTIONS);
