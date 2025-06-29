@@ -4,7 +4,7 @@
 TsudoiList Backend adalah REST API yang digunakan untuk mengelola daftar anime dan drama. API ini memungkinkan pengguna untuk mencari, menambahkan, memperbarui, dan menghapus data anime dan drama, serta mengelola akun pengguna.
 
 ## URL Base
-`https://tsu-list-backend.vercel.app/`
+`http://localhost:8000`
 
 ## Fitur Utama
 - **Manajemen Anime & Drama**: Fetch data, tambah, perbarui status & episode, serta hapus.
