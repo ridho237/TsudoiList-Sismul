@@ -1,7 +1,7 @@
-# Tsu List Backend
+# TsudoiList Backend
 
 ## Deskripsi
-Tsu List Backend adalah REST API yang digunakan untuk mengelola daftar anime dan drama. API ini memungkinkan pengguna untuk mencari, menambahkan, memperbarui, dan menghapus data anime dan drama, serta mengelola akun pengguna.
+TsudoiList Backend adalah REST API yang digunakan untuk mengelola daftar anime dan drama. API ini memungkinkan pengguna untuk mencari, menambahkan, memperbarui, dan menghapus data anime dan drama, serta mengelola akun pengguna.
 
 ## URL Base
 `https://tsu-list-backend.vercel.app/`
@@ -24,17 +24,6 @@ Tsu List Backend adalah REST API yang digunakan untuk mengelola daftar anime dan
 | GET    | `/anime/:id` | Ambil detail anime pengguna berdasarkan ID (**Auth diperlukan**) |
 | DELETE | `/anime/delete/:id` | Hapus anime dari daftar (**Auth diperlukan**) |
 
-### **Drama**
-| Method | Endpoint | Deskripsi |
-|--------|---------|-----------|
-| GET    | `/drama/fetch-drama` | Ambil semua drama |
-| GET    | `/drama/fetch-drama/:id` | Ambil detail drama berdasarkan ID |
-| POST   | `/drama/add` | Tambah drama ke daftar (**Auth diperlukan**) |
-| PUT    | `/drama/update/:id` | Perbarui status drama (**Auth diperlukan**) |
-| PUT    | `/drama/updateEps/:id` | Perbarui jumlah episode drama (**Auth diperlukan**) |
-| GET    | `/drama/` | Ambil semua drama pengguna (**Auth diperlukan**) |
-| GET    | `/drama/:id` | Ambil detail drama pengguna berdasarkan ID (**Auth diperlukan**) |
-| DELETE | `/drama/delete/:id` | Hapus drama dari daftar (**Auth diperlukan**) |
 
 ### **User**
 | Method | Endpoint | Deskripsi |
@@ -47,7 +36,7 @@ Tsu List Backend adalah REST API yang digunakan untuk mengelola daftar anime dan
 | DELETE | `/user/profile` | Hapus akun (**Auth diperlukan**) |
 
 ## Cara Penggunaan
-1. **Clone Repository**: `git clone https://github.com/username/tsu-list-backend.git`
+1. **Clone Repository**: `git clone https://github.com/username/TsudoiList Backend.git`
 2. **Install Dependencies**: `npm install`
 3. **Konfigurasi Environment**: Buat `.env` file dan isi dengan konfigurasi yang diperlukan.
 4. **Jalankan Server**: `npm start`
@@ -59,7 +48,11 @@ Tsu List Backend adalah REST API yang digunakan untuk mengelola daftar anime dan
 - **Vercel** untuk deployment backend.
 
 ## Kontributor
-- **Ridho** *(Owner & Developer)*
+- [**Ridho**](https://github.com/ridho237) *(Login & Register + Page)* 
+- **Arifin** *(Owner & Developer)*
+- **Ario** *(Owner & Developer)*
+- **Fizri** *(Owner & Developer)*
+- **Fizri** *(Owner & Developer)*
 
 ---
 Backend ini dikembangkan untuk mempermudah pengguna dalam mengelola daftar anime dan drama yang mereka ikuti. Silakan gunakan dan kontribusikan! 🚀
