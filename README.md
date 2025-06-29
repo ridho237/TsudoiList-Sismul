@@ -48,11 +48,11 @@ TsudoiList Backend adalah REST API yang digunakan untuk mengelola daftar anime d
 - **Vercel** untuk deployment backend.
 
 ## Kontributor
-- [**Ridho**](https://github.com/ridho237) *(Login & Register + Page)* 
-- **Arifin** *(Owner & Developer)*
-- **Ario** *(Owner & Developer)*
-- **Fizri** *(Owner & Developer)*
-- **Fizri** *(Owner & Developer)*
+- [**Muhammad Ridho**](https://github.com/ridho237) *(Login & Register + Page)* 
+- [**Arifin Ilham Muttaqin**](https://github.com/AL1isHere) *((Create) List + Detail Page)*
+- [**Ario Nugroho**](https://github.com/ario-create) *((Delete) List + AnimeList Page)*
+- [**Fizri Rosdiansyah**](https://github.com/Vzri) *((Update) List)*
+- [**Iftah Maulana**](https://github.com/IftahMaulana) *((Read) Landing Page)*
 
 ---
 Backend ini dikembangkan untuk mempermudah pengguna dalam mengelola daftar anime dan drama yang mereka ikuti. Silakan gunakan dan kontribusikan! 🚀
