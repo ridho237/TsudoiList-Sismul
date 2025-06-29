@@ -54,15 +54,13 @@ export default function Register() {
 				className='max-w-md mx-auto mt-10 p-6 border-3 border-fourtho rounded-xl bg-firsto'
 			>
 				<h1 className='text-3xl mb-1 font-bold text-start text-fourtho'>Register</h1>
-				<h3 className='text-start text-md mb-5 text-fourtho'>
-					Selamat datang di Tsu-List
-				</h3>
+				<h3 className='text-start text-md mb-5 text-fourtho'>Selamat datang di Tsu-List</h3>
 				<input
 					type='text'
 					placeholder='Username'
 					value={username}
 					onChange={(e) => setUsername(e.target.value)}
-					className='w-full p-2 border-3 border-fourtho rounded-xl mb-2 bg-firsto placeholder:text-thirdo'
+					className='w-full p-2 border-3 border-fourtho rounded-xl mb-2 bg-firsto text-thirdo placeholder:text-thirdo'
 					required
 				/>
 				<input
@@ -70,7 +68,7 @@ export default function Register() {
 					placeholder='Email'
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
-					className='w-full p-2 border-3 border-fourtho rounded-xl mb-2 bg-firsto placeholder:text-thirdo'
+					className='w-full p-2 border-3 border-fourtho rounded-xl mb-2 bg-firsto text-thirdo placeholder:text-thirdo'
 					required
 				/>
 				<input
@@ -78,7 +76,7 @@ export default function Register() {
 					placeholder='Password'
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
-					className='w-full p-2 border-3 border-fourtho rounded-xl mb-2 bg-firsto placeholder:text-thirdo'
+					className='w-full p-2 border-3 border-fourtho rounded-xl mb-2 bg-firsto text-thirdo placeholder:text-thirdo'
 					required
 				/>
 				<input
@@ -86,7 +84,7 @@ export default function Register() {
 					placeholder='Confirm your password'
 					value={confirmPassword}
 					onChange={(e) => setConfirmPassword(e.target.value)}
-					className='w-full p-2 border-3 border-fourtho rounded-xl mb-2 bg-firsto placeholder:text-thirdo'
+					className='w-full p-2 border-3 border-fourtho rounded-xl mb-2 bg-firsto text-thirdo placeholder:text-thirdo'
 					required
 				/>
 
@@ -105,9 +103,7 @@ export default function Register() {
 					<button
 						type='submit'
 						className={`w-full p-2 rounded-xl text-firsto  ${
-							loading
-								? 'bg-fourtho cursor-not-allowed'
-								: 'bg-fourtho hover:bg-thirdo'
+							loading ? 'bg-fourtho cursor-not-allowed' : 'bg-fourtho hover:bg-thirdo'
 						}`}
 						disabled={loading}
 					>

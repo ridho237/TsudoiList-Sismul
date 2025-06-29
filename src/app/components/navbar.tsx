@@ -5,8 +5,6 @@ import { AuthContext } from '../context/AuthContext';
 import { logoutUser } from '../utils/auth';
 import {
 	Navbar,
-	NavbarBrand,
-	NavbarMenuToggle,
 	NavbarContent,
 	NavbarItem,
 	Link,
@@ -16,8 +14,6 @@ import {
 	DropdownItem,
 	DropdownMenu,
 	Spinner,
-	NavbarMenuItem,
-	NavbarMenu,
 } from '@heroui/react';
 
 export default function App() {
@@ -44,22 +40,7 @@ export default function App() {
 			className='flex justify-start w-full mx-auto bg-firsto border-b-3 border-fourtho'
 		>
 			<NavbarContent
-				className='sm:hidden'
-				justify='start'
-			>
-				<NavbarMenuToggle />
-				<NavbarBrand>
-					<Link
-						href='/'
-						className='text-fourtho font-semibold'
-					>
-						TsuList
-					</Link>
-				</NavbarBrand>
-			</NavbarContent>
-
-			<NavbarContent
-				className='hidden sm:flex'
+				className='flex'
 				justify='start'
 			>
 				<NavbarItem>
@@ -67,31 +48,21 @@ export default function App() {
 						href='/'
 						className='text-fourtho font-semibold'
 					>
-						TsuList
+						TsudoiList
 					</Link>
 				</NavbarItem>
-				<NavbarItem isActive={pathname === '/'}>
-					<Link
-						href='/'
-						className='text-fourtho'
-					>
-						Home
-					</Link>
-				</NavbarItem>
+			</NavbarContent>
+
+			<NavbarContent
+				className='flex'
+				justify='center'
+			>
 				<NavbarItem isActive={pathname === '/#anime'}>
 					<Link
 						href='/#anime'
 						className='text-fourtho'
 					>
-						Anime
-					</Link>
-				</NavbarItem>
-				<NavbarItem isActive={pathname === '/#drama'}>
-					<Link
-						href='/#drama'
-						className='text-fourtho'
-					>
-						Drama
+						Welcome To TsudoiList
 					</Link>
 				</NavbarItem>
 			</NavbarContent>
@@ -112,36 +83,36 @@ export default function App() {
 							aria-label='Profile Actions'
 							variant='flat'
 						>
-							<DropdownItem key='profile'>
+							<DropdownItem
+								className='text-black'
+								key='profile'
+							>
 								Welcome, {auth.user.username ?? 'User'}!
 							</DropdownItem>
 							<DropdownItem
 								key='profiles'
 								href='/profile'
+								className='text-fourtho'
 							>
 								Profile
 							</DropdownItem>
 							<DropdownItem
 								key='animelist'
 								href='/anime'
+								className='text-fourtho'
 							>
 								Your Animelist
 							</DropdownItem>
 							<DropdownItem
-								key='dramalist'
-								href='/drama'
-							>
-								Your Dramalist
-							</DropdownItem>
-							<DropdownItem
 								key='logout'
 								color='danger'
+								className='text-black'
 								onPress={handleLogout}
 							>
 								{loading ? (
 									<Spinner
 										size='sm'
-										color='white'
+										color='danger'
 									/>
 								) : (
 									'Log Out'
@@ -166,35 +137,6 @@ export default function App() {
 					</>
 				)}
 			</NavbarContent>
-
-			<NavbarMenu className='bg-firsto'>
-				<NavbarMenuItem className='flex flex-col justify-center gap-4 items-center h-full w-full'>
-					<NavbarItem isActive={pathname === '/'}>
-						<Link
-							href='/'
-							className='text-fourtho'
-						>
-							Home
-						</Link>
-					</NavbarItem>
-					<NavbarItem isActive={pathname === '/#anime'}>
-						<Link
-							href='/#anime'
-							className='text-fourtho'
-						>
-							Anime
-						</Link>
-					</NavbarItem>
-					<NavbarItem isActive={pathname === '/#drama'}>
-						<Link
-							href='/#drama'
-							className='text-fourtho'
-						>
-							Drama
-						</Link>
-					</NavbarItem>
-				</NavbarMenuItem>
-			</NavbarMenu>
 		</Navbar>
 	);
 }

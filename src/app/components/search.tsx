@@ -16,7 +16,7 @@ export default function Search({ searchTerm, setSearchTerm }: SearchProps) {
 					input: ['bg-firsto', 'text-fourtho', 'placeholder:text-fourtho'],
 				}}
 				label='Search'
-				placeholder='Type Anime/Drama name...'
+				placeholder='Type Anime name...'
 				radius='lg'
 			/>
 		</div>
